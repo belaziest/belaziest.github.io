@@ -66,7 +66,7 @@
 						<h4 class="list-group-item-heading">Drag Birdie' <span class="label label-danger">NEW</span></h4>
 						<p class="list-group-item-text">Drag the Birdie!!</p>
 						<div class="text-nowrap text-right to_bottom">
-							<a href="unity:https://play.google.com/store/apps/details?id=com.belaziest.dragbirdie"><img width="84" height="25" src="img/downloadBadgeAos25.png"></a><a href="unity:https://itunes.apple.com/us/app/drag-birdie/id1061650637?l=ko&ls=1&mt=8"><img width="84" height="25" src="img/downloadBadgeIos25.png"></a>
+							<a class="hideOnIos" href="unity:https://play.google.com/store/apps/details?id=com.belaziest.dragbirdie"><img width="84" height="25" src="img/downloadBadgeAos25.png"></a><a href="unity:https://itunes.apple.com/us/app/drag-birdie/id1061650637?l=ko&ls=1&mt=8"><img width="84" height="25" src="img/downloadBadgeIos25.png"></a>
 						</div>
 					</div>
 				</div>
@@ -156,6 +156,18 @@
     vertical-align: baseline !important;
   }
   </style>
+
+	<script type="text/css">
+	var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+	if (iOS && null != document) {
+	  var els = document.getElementsByClassName('hideOnIos');
+	  for (var el in els) {
+	    if (els.hasOwnProperty(el)) {
+	      el.setAttribute('display', 'hidden');
+	    }
+	  }
+	}
+	</script>
 
 	<!-- Bootstrap core JavaScript
 	================================================== -->
